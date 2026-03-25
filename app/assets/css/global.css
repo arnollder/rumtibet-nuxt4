@@ -1,4 +1,23 @@
+@font-face {
+  font-family: 'NEXT_ART_Bold';
+  src: url('/fonts/NEXT_ART_Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 *, body {
   margin: 0;
   padding: 0;
+}
+
+.buttons {
+  padding: 16px 36px;
+  border-radius: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
