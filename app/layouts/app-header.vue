@@ -32,7 +32,42 @@
       <h2 :class="headerTitle">
         Насладись прогулкой в горы с&nbsp;командой единомышленников
       </h2>
-      <a v-if="isMobile || isTablet" class="buttons-white" href="#">Найти программу</a>
+      <a v-if="isMobile || isTablet" class="buttons-white" href="#"
+        >Найти программу</a
+      >
+
+      <form v-if="isDesktop" class="heder-form">
+        <fieldset class="form-fiedset">
+          <select class="form-point custom-arrow" name="location">
+            <option value="" disabled selected>Локация для тура</option>
+            <option value="sea">море</option>
+            <option value="goa">горы</option>
+          </select>
+          <p class="form-point-sign">выберите из списка</p>
+        </fieldset>
+        <fieldset class="form-fiedset">
+          <select class="form-point custom_date" name="location">
+            <option value="" disabled selected>Дата похода</option>
+            <option value="sea">зима</option>
+            <option value="goa">лето</option>
+            <option value="goa">осень</option>
+            <option value="goa">весна</option>
+          </select>
+          <p class="form-point-sign">укажите диапазон</p>
+        </fieldset>
+        <fieldset class="form-fiedset">
+          <select class="form-point custom-arrow" name="location">
+            <option value="" disabled selected>Участники</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+          <p class="form-point-sign">минимум 4 человека</p>
+        </fieldset>
+        <button class="buttons-white" type="submit">Найти программу</button>
+      </form>
     </div>
   </div>
 </template>
@@ -140,5 +175,52 @@ const toggleHeaderMenu = () => {
 }
 .buttons-dark {
   margin-left: 25px;
+}
+.heder-form {
+  padding: 40px;
+  display: flex;
+  column-gap: 24px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.form-fiedset {
+  border: none;
+}
+.form-point {
+  width: 270px;
+  height: 52px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-family: "NunitoSans";
+  font-weight: 700;  
+  cursor: pointer;
+  
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.form-point-sign {
+  padding: 8px;
+  color: white;
+  font-family: "NunitoSans";
+  font-weight: 400;
+  font-size: 14px;
+}
+.custom-arrow {
+  background-image: url("../assets/images/custom_arrow-down.svg");
+}
+.custom_date {
+  background-image: url("../assets/images/custom_date.svg");
+}
+.buttons-white {
+  width: 213px;
+  height: 52px;
+  cursor: pointer;
 }
 </style>

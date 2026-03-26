@@ -45,6 +45,7 @@ li {
   font-weight: 700;
   color: rgba(26, 62, 62, 1);
   background-color: white;
+  border: none;
 }
 .buttons-dark {
   padding: 12px 24px;
