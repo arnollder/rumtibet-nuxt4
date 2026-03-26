@@ -1,39 +1,58 @@
 @font-face {
-  font-family: 'NEXT_ART_Bold';
-  src: url('/fonts/NEXT_ART_Bold.woff2') format('woff2');
+  font-family: "NEXT_ART_Bold";
+  src: url("/fonts/NEXT_ART_Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'NunitoSans';
-  src: url('/fonts/NunitoSans.woff2') format('woff2');
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'NunitoSans';
-  src: url('/fonts/NunitoSans.woff2') format('woff2');
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-*, body {
+*,
+body {
   margin: 0;
   padding: 0;
 }
 
-ul, li {
+.root-container {
+  margin: 0 auto;
+  width: 1180px;
+}
+
+ul,
+li {
   list-style: none;
   padding-left: 0;
 }
 
-.buttons {
+.buttons-white {
   padding: 16px 36px;
   border-radius: 4px;
+  font-family: "NunitoSans";
+  font-weight: 700;
+  color: rgba(26, 62, 62, 1);
+  background-color: white;
+}
+.buttons-dark {
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: "NunitoSans";
+  font-weight: 700;
+  color: white;
+  background-color: rgba(26, 62, 62, 1);
 }
 
 a {
