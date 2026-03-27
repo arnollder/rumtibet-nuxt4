@@ -2,7 +2,7 @@
   <div class="root-header">
     <div :class="rootContainer">
       <div :class="headerLine">
-        <img class="header-logo" src="../assets/images/logo.svg" alt="logo" />
+        <img class="header-logo" :class="hederLogo" src="../assets/images/logo.svg" alt="logo" />
         <nav class="header-menu">
           <ul v-if="headerMenu || isDesktop" :class="headerList">
             <img
@@ -40,29 +40,29 @@
         <fieldset class="form-fiedset">
           <select class="form-point custom-arrow" name="location">
             <option value="" disabled selected>Локация для тура</option>
-            <option value="sea">море</option>
-            <option value="goa">горы</option>
+            <option class="option-black" value="sea">море</option>
+            <option class="option-black" value="goa">горы</option>
           </select>
           <p class="form-point-sign">выберите из списка</p>
         </fieldset>
         <fieldset class="form-fiedset">
           <select class="form-point custom_date" name="location">
             <option value="" disabled selected>Дата похода</option>
-            <option value="sea">зима</option>
-            <option value="goa">лето</option>
-            <option value="goa">осень</option>
-            <option value="goa">весна</option>
+            <option class="option-black" value="sea">зима</option>
+            <option class="option-black" value="goa">лето</option>
+            <option class="option-black" value="goa">осень</option>
+            <option class="option-black" value="goa">весна</option>
           </select>
           <p class="form-point-sign">укажите диапазон</p>
         </fieldset>
         <fieldset class="form-fiedset">
           <select class="form-point custom-arrow" name="location">
             <option value="" disabled selected>Участники</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
+            <option class="option-black" value="4">4</option>
+            <option class="option-black" value="5">5</option>
+            <option class="option-black" value="6">6</option>
+            <option class="option-black" value="7">7</option>
+            <option class="option-black" value="8">8</option>
           </select>
           <p class="form-point-sign">минимум 4 человека</p>
         </fieldset>
@@ -79,6 +79,10 @@ const isMobile = computed(() => breakpoint.value === "mobile");
 const isTablet = computed(() => breakpoint.value === "tablet");
 const isDesktop = computed(() => breakpoint.value === "desktop");
 
+const hederLogo = computed(() => ({
+  'heder-logo-mobile': isMobile.value || isTablet.value,
+  'heder-logo-desktop': isDesktop.value,
+}))
 const headerLine = computed(() => ({
   "header-line-mobile": isMobile.value || isTablet.value,
   "header-line-desktop": isDesktop.value,
@@ -112,6 +116,14 @@ const toggleHeaderMenu = () => {
 }
 .header-logo {
   cursor: pointer;
+}
+.heder-logo-mobile {
+  width: 84px;
+  height: 44px;
+}
+.heder-logo-desktop {
+  width: 137px;
+  height: 72px;
 }
 .header-line-mobile {
   display: flex;
@@ -216,6 +228,9 @@ const toggleHeaderMenu = () => {
 }
 .custom_date {
   background-image: url("../assets/images/custom_date.svg");
+}
+.option-black {
+  color: black;
 }
 .buttons-white {
   width: 213px;
