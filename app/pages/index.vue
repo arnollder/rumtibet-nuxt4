@@ -1,7 +1,10 @@
 <template>
-  <h2>Main Page</h2>
+  <HomeAbout />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomeAbout from '~/components/pages/home/HomeAbout.vue';
+
+</script>
 
 <style scoped></style>
