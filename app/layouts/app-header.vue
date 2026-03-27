@@ -2,7 +2,12 @@
   <div class="root-header">
     <div :class="rootContainer">
       <div :class="headerLine">
-        <img class="header-logo" :class="hederLogo" src="../assets/images/logo.svg" alt="logo" />
+        <img
+          class="header-logo"
+          :class="hederLogo"
+          src="../assets/images/logo.svg"
+          alt="logo"
+        />
         <nav class="header-menu">
           <ul v-if="headerMenu || isDesktop" :class="headerList">
             <img
@@ -12,11 +17,26 @@
               src="../assets/images/close_icon.svg"
               alt="close"
             />
-            <li><a href="#">Про гида</a></li>
-            <li><a href="#">Программа тура</a></li>
-            <li><a href="#">Стоимость</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li class="li-wrapper">
+              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <a href="#">Про гида</a>
+            </li>
+            <li class="li-wrapper">
+              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <a href="#">Программа тура</a>
+            </li>
+            <li class="li-wrapper">
+              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <a href="#">Стоимость</a>
+            </li>
+            <li class="li-wrapper">
+              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <a href="#">Блог</a>
+            </li>
+            <li class="li-wrapper">
+              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <a href="#">Контакты</a>
+            </li>
             <li v-if="isDesktop">
               <a class="buttons-dark" href="#">Консультация</a>
             </li>
@@ -80,9 +100,9 @@ const isTablet = computed(() => breakpoint.value === "tablet");
 const isDesktop = computed(() => breakpoint.value === "desktop");
 
 const hederLogo = computed(() => ({
-  'heder-logo-mobile': isMobile.value || isTablet.value,
-  'heder-logo-desktop': isDesktop.value,
-}))
+  "heder-logo-mobile": isMobile.value || isTablet.value,
+  "heder-logo-desktop": isDesktop.value,
+}));
 const headerLine = computed(() => ({
   "header-line-mobile": isMobile.value || isTablet.value,
   "header-line-desktop": isDesktop.value,
@@ -207,9 +227,9 @@ const toggleHeaderMenu = () => {
   background: transparent;
   color: white;
   font-family: "NunitoSans";
-  font-weight: 700;  
+  font-weight: 700;
   cursor: pointer;
-  
+
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -236,5 +256,10 @@ const toggleHeaderMenu = () => {
   width: 213px;
   height: 52px;
   cursor: pointer;
+}
+.li-wrapper {
+  display: flex;
+  align-items: start;
+  column-gap: 8px;
 }
 </style>
