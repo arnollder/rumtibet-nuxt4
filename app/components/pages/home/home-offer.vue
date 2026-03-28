@@ -59,8 +59,11 @@
           </div>
         </section>
 
-        <section class="right-block">
-
+        <section v-if="isDesktop" class="right-block">
+          <img class="offer-img left-diag" src="../../../assets/images/content/home-offer/laguna.jpg" alt="laguna">
+          <img class="offer-img right-diag" src="../../../assets/images/content/home-offer/ravine.jpg" alt="ravine">
+          <img class="offer-img right-diag" src="../../../assets/images/content/home-offer/snowmobile.jpg" alt="snowmobile">
+          <img class="offer-img left-diag" src="../../../assets/images/content/home-offer/mountains.jpg" alt="mountains">
         </section>
 
       </div>
@@ -118,8 +121,9 @@ const buttons = computed(() => ({
 }
 .root-component-desktop {
   padding: 80px 0 100px 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  align-items: center;
+  column-gap: 90px;
 }
 .left-block {
     display: flex;
@@ -162,6 +166,24 @@ const buttons = computed(() => ({
   }
   .left-block {
     row-gap: 40px;
+  }
+  .right-block {
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(2, 250px);
+    gap: 10px;
+  }
+  .offer-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .left-diag {
+    border-radius: 0 50px;
+  }
+  .right-diag {
+    border-radius: 50px 0;
   }
 }
 </style>
