@@ -1,59 +1,68 @@
 <template>
-  <div class="root-bg" :class="rootContainer">
-    <div :class="rootComponent">
-      <div :class="textBlock">
-        <div :class="title">
-          <h2 class="description-title" :class="descriptionTitle">
-            наше предложение
-          </h2>
-          <h2 class="component-title" :class="componentTitle">
-            Лучшие программы для тебя
-          </h2>
-        </div>
-        <p class="component-text" :class="componentText">
-          Его корни уходят в один фрагмент классической латыни 45 года н.э., то
-          есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни
-          из колледжа.
-        </p>
-      </div>
-
-      <div class="motivation-list">
-        <div class="motivation-item">
-          <img src="../../../assets/images/gid.svg" alt="" />
-          <div class="motivation-article">
-            <h2 class="motivation-title">Опытный гид</h2>
-            <p class="motivation-text">
-              Для современного мира базовый вектор развития предполагает
-              независимые способы реализации соответствующих условий
-              активизации.
+  <div class="root-bg">
+    <div :class="rootContainer">
+      <div :class="rootComponent">
+        <section class="left-block">
+          <div :class="textBlock">
+            <div :class="title">
+              <h2 class="description-title" :class="descriptionTitle">
+                наше предложение
+              </h2>
+              <h2 class="component-title" :class="componentTitle">
+                Лучшие программы для тебя
+              </h2>
+            </div>
+            <p class="component-text" :class="componentText">
+              Его корни уходят в один фрагмент классической латыни 45 года н.э.,
+              то есть более двух тысячелетий назад. Ричард МакКлинток, профессор
+              латыни из колледжа.
             </p>
           </div>
-        </div>
 
-        <div class="motivation-item">
-          <img src="../../../assets/images/safe.svg" alt="" />
-          <div class="motivation-article">
-            <h2 class="motivation-title">Безопасный поход</h2>
-            <p class="motivation-text">
-              Для современного мира базовый вектор развития предполагает
-              независимые способы реализации соответствующих условий
-              активизации.
-            </p>
+          <div class="motivation-list">
+            <div class="motivation-item">
+              <img src="../../../assets/images/gid.svg" alt="" />
+              <div class="motivation-article">
+                <h2 class="motivation-title">Опытный гид</h2>
+                <p class="motivation-text">
+                  Для современного мира базовый вектор развития предполагает
+                  независимые способы реализации соответствующих условий
+                  активизации.
+                </p>
+              </div>
+            </div>
+            <div class="motivation-item">
+              <img src="../../../assets/images/safe.svg" alt="" />
+              <div class="motivation-article">
+                <h2 class="motivation-title">Безопасный поход</h2>
+                <p class="motivation-text">
+                  Для современного мира базовый вектор развития предполагает
+                  независимые способы реализации соответствующих условий
+                  активизации.
+                </p>
+              </div>
+            </div>
+            <div class="motivation-item">
+              <img src="../../../assets/images/price.svg" alt="" />
+              <div class="motivation-article">
+                <h2 class="motivation-title">Лояльные цены</h2>
+                <p class="motivation-text">
+                  Для современного мира базовый вектор развития предполагает
+                  независимые способы реализации соответствующих условий
+                  активизации.
+                </p>
+              </div>
+            </div>
+            <a class="buttons-dark" :class="buttons" href="#"
+              >Стоимость программ</a
+            >
           </div>
-        </div>
+        </section>
 
-        <div class="motivation-item">
-          <img src="../../../assets/images/price.svg" alt="" />
-          <div class="motivation-article">
-            <h2 class="motivation-title">Лояльные цены</h2>
-            <p class="motivation-text">
-              Для современного мира базовый вектор развития предполагает
-              независимые способы реализации соответствующих условий
-              активизации.
-            </p>
-          </div>
-        </div>
-        <a class="buttons-dark" :class="buttons" href="#">Стоимость программ</a>
+        <section class="right-block">
+
+        </section>
+
       </div>
     </div>
   </div>
@@ -107,9 +116,16 @@ const buttons = computed(() => ({
   flex-direction: column;
   row-gap: 32px;
 }
-/* .root-component-desktop {
-  padding: 100px 0;
-} */
+.root-component-desktop {
+  padding: 80px 0 100px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.left-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
 .component-text {
   margin-top: 32px;
 }
@@ -135,5 +151,17 @@ const buttons = computed(() => ({
 }
 .buttons-dark {
   margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .motivation-list {
+    row-gap: 40px;
+  }
+  .component-text {
+    margin-top: 40px;
+  }
+  .left-block {
+    row-gap: 40px;
+  }
 }
 </style>
