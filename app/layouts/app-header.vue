@@ -18,23 +18,43 @@
               alt="close"
             />
             <li class="li-wrapper">
-              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <img
+                v-if="isMobile"
+                src="../assets/images/arrow-right.svg"
+                alt="arrow-right"
+              />
               <a href="#">Про гида</a>
             </li>
             <li class="li-wrapper">
-              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <img
+                v-if="isMobile"
+                src="../assets/images/arrow-right.svg"
+                alt="arrow-right"
+              />
               <a href="#">Программа тура</a>
             </li>
             <li class="li-wrapper">
-              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <img
+                v-if="isMobile"
+                src="../assets/images/arrow-right.svg"
+                alt="arrow-right"
+              />
               <a href="#">Стоимость</a>
             </li>
             <li class="li-wrapper">
-              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <img
+                v-if="isMobile"
+                src="../assets/images/arrow-right.svg"
+                alt="arrow-right"
+              />
               <a href="#">Блог</a>
             </li>
             <li class="li-wrapper">
-              <img v-if="isMobile" src="../assets/images/arrow-right.svg" alt="arrow-right"/>
+              <img
+                v-if="isMobile"
+                src="../assets/images/arrow-right.svg"
+                alt="arrow-right"
+              />
               <a href="#">Контакты</a>
             </li>
             <li v-if="isDesktop">
