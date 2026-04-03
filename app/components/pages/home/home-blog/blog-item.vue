@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IBlogItemProps } from '../home-types';
+import type { IBlogItemProps } from "../home-types";
 
 const props = defineProps<IBlogItemProps>();
 const bgImg = computed(() => ({
@@ -48,6 +48,7 @@ const bgImg = computed(() => ({
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  border-radius: 10px;
 }
 .content-title {
   font-weight: 700;
@@ -56,6 +57,13 @@ const bgImg = computed(() => ({
 .content-text {
   font-weight: 400;
   font-size: 14px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .content-bottom {
   margin-top: auto;
@@ -70,5 +78,22 @@ const bgImg = computed(() => ({
 .content-read-all {
   font-weight: 700;
   color: rgba(26, 62, 62, 1);
+}
+
+@media (min-width: 1024px) {
+  .root-blog-item {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 230px 294px;
+    gap: 24px;
+  }
+  .blog-item-img {
+    width: 230px;
+    height: 280px;
+    border-radius: 6px;
+  }
+  .content {
+    height: 250px;
+  }
 }
 </style>
