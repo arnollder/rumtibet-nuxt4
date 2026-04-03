@@ -12,9 +12,30 @@
 
       <div class="karusel-container">
         <div class="karusel">
-          <ScenarioItem class="lake" />
-          <ScenarioItem class="night" />
-          <ScenarioItem class="yoga" />
+          <ScenarioItem
+            class="karusel-item"
+            :round="'4.9'"
+            :title="'Озеро возле гор'"
+            :description="'романтическое приключение'"
+            :price="480"
+            :bgImg="lakeImg"
+          />
+          <ScenarioItem
+            class="karusel-item"
+            :round="'4.5'"
+            :title="'Ночь в горах'"
+            :description="'в компании друзей'"
+            :price="500"
+            :bgImg="nightImg"
+          />
+          <ScenarioItem
+            class="karusel-item"
+            :round="'5.0'"
+            :title="'Йога в горах'"
+            :description="'для тех, кто забоится о себе'"
+            :price="230"
+            :bgImg="yogaImg"
+          />
         </div>
       </div>
 
@@ -25,6 +46,9 @@
 
 <script setup lang="ts">
 import ScenarioItem from "./home-scenario/scenario-item.vue";
+import lakeImg from "../../../assets/images/content/home-scenario/lake.jpg";
+import nightImg from "../../../assets/images/content/home-scenario/night.jpg";
+import yogaImg from "../../../assets/images/content/home-scenario/yoga.jpg";
 
 const { breakpoint } = useViewport();
 
@@ -81,6 +105,8 @@ const buttons = computed(() => ({
 
 /* Элементы карусели — на мобилке на всю ширину */
 .karusel-item {
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
   width: calc(100% - 32px);
   height: 400px;
@@ -131,15 +157,5 @@ const buttons = computed(() => ({
     width: 380px;
     height: 500px;
   }
-}
-
-.lake {
-  background-image: url("../../../assets/images/content/home-scenario/lake.jpg");
-}
-.night {
-  background-image: url("../../../assets/images/content/home-scenario/night.jpg");
-}
-.yoga {
-  background-image: url("../../../assets/images/content/home-scenario/yoga.jpg");
 }
 </style>
