@@ -18,20 +18,12 @@
 </template>
 
 <script setup lang="ts">
-const { breakpoint } = useViewport();
+import type { IScenarioProps } from '../home-types';
 
+const { breakpoint } = useViewport();
 const isDesktop = computed(() => breakpoint.value === "desktop");
 
-interface IScenarioProps {
-  round: string;
-  title: string;
-  description: string;
-  price: number;
-  bgImg: string;
-}
-
 const props = defineProps<IScenarioProps>();
-
 const bgImg = computed(() => ({
   backgroundImage: `url(${props.bgImg})`,
 }));
