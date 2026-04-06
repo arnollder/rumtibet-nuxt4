@@ -113,11 +113,8 @@ const buttons = computed(() => ({
   padding: 4px 16px;
 }
 .karusel-item {
-  display: flex;
-  flex-direction: column;
   flex-shrink: 0;
   width: calc(100% - 32px);
-  height: 496px;
   background-position: center;
   background-size: cover;
   scroll-snap-align: start;
