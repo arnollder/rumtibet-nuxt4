@@ -14,27 +14,13 @@
         <div class="karusel">
           <ScenarioItem
             class="karusel-item"
-            :round="'4.9'"
-            :title="'Озеро возле гор'"
-            :description="'романтическое приключение'"
-            :price="480"
-            :bgImg="lakeImg"
-          />
-          <ScenarioItem
-            class="karusel-item"
-            :round="'4.5'"
-            :title="'Ночь в горах'"
-            :description="'в компании друзей'"
-            :price="500"
-            :bgImg="nightImg"
-          />
-          <ScenarioItem
-            class="karusel-item"
-            :round="'5.0'"
-            :title="'Йога в горах'"
-            :description="'для тех, кто забоится о себе'"
-            :price="230"
-            :bgImg="yogaImg"
+            v-for="item in scenarioList"
+            :key="item.id"
+            :round="item.round"
+            :title="item.title"
+            :description="item.description"
+            :price="item.price"
+            :bgImg="item.bgImg"
           />
         </div>
       </div>
@@ -67,6 +53,33 @@ const buttons = computed(() => ({
   "buttons-dark-mobile": isMobile.value || isTablet.value,
   "buttons-dark-desktop": isDesktop.value,
 }));
+
+const scenarioList = [
+  {
+    id: 0,
+    round: "4.9",
+    title: "Озеро возле гор",
+    description: "романтическое приключение",
+    price: 480,
+    bgImg: lakeImg,
+  },
+  {
+    id: 1,
+    round: "4.5",
+    title: "Ночь в горах",
+    description: "в компании друзей",
+    price: 500,
+    bgImg: nightImg,
+  },
+  {
+    id: 2,
+    round: "5.0",
+    title: "Йога в горах",
+    description: "для тех, кто забоится о себе",
+    price: 230,
+    bgImg: yogaImg,
+  },
+];
 </script>
 
 <style scoped>
