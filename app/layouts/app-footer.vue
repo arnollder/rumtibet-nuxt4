@@ -226,4 +226,10 @@ const footerBottom = computed(() => ({
 .underline {
   text-decoration: underline;
 }
+
+@media (min-width: 1024px) {
+  .root-footer-desktop {
+    margin-top: 90px;
+  }
+}
 </style>

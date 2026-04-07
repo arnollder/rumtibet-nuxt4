@@ -4,6 +4,7 @@
   <HomeScenario />
   <HomeBlog />
   <HomeFotoReport />
+  <HomeSubscribe />
 </template>
 
 <script setup lang="ts">
@@ -12,6 +13,7 @@ import HomeBlog from '~/components/pages/home/home-blog.vue';
 import HomeFotoReport from '~/components/pages/home/home-foto-report.vue';
 import HomeOffer from '~/components/pages/home/home-offer.vue';
 import HomeScenario from '~/components/pages/home/home-scenario.vue';
+import HomeSubscribe from '~/components/pages/home/home-subscribe.vue';
 
 </script>
 
