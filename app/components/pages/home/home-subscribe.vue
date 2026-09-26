@@ -2,7 +2,7 @@
   <div :class="rootContainer">
     <div class="root-component">
       <div class="sticker">
-        <div :class="title">
+        <div>
           <h2 class="description-title description-title-mobile">актуально</h2>
           <h2 class="component-title component-title-mobile">
             Получайте полезные рассылки о путешествиях
@@ -14,19 +14,20 @@
             >Введите e-mail адрес</label
           >
 
-          <fieldset class="subscribe-submit">
+          <div class="subscribe-submit">
             <input
               class="subscribe-input"
-              type="text"
+              type="email"
               id="subscribe-input"
-              name="user-input"
+              name="email"
+              autocomplete="email"
               placeholder="name@domain.com"
               required
             />
-            <button class="buttons-dark" :class="buttons" type="submit">
+            <button class="buttons-dark" type="submit">
               Подписаться на новости
             </button>
-          </fieldset>
+          </div>
 
           <p class="subscribe-bottom">
             подписываясь на новости, вы автоматически соглашаетесь с условиями
@@ -41,19 +42,10 @@
 <script setup lang="ts">
 const { breakpoint } = useViewport();
 
-const isMobile = computed(() => breakpoint.value === "mobile");
-const isTablet = computed(() => breakpoint.value === "tablet");
 const isDesktop = computed(() => breakpoint.value === "desktop");
 
 const rootContainer = computed(() => ({
   "root-container": isDesktop.value,
-}));
-const title = computed(() => ({
-  "title-desktop": isDesktop.value,
-}));
-const buttons = computed(() => ({
-  "buttons-dark-mobile": isMobile.value || isTablet.value,
-  "buttons-dark-desktop": isDesktop.value,
 }));
 
 const handleSubmit = () => {
@@ -82,7 +74,6 @@ const handleSubmit = () => {
 .subscribe-form {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 .subscribe-title {
   font-family: "NunitoSans";
@@ -92,8 +83,6 @@ const handleSubmit = () => {
   display: flex;
   align-items: baseline;
   flex-direction: column;
-
-  border: none;
 }
 .subscribe-input {
   margin-top: 8px;
@@ -114,9 +103,6 @@ const handleSubmit = () => {
   text-align: left;
   font-family: "NunitoSans";
   font-weight: 600;
-
-  border: none;
-  background: none;
 }
 .buttons-dark {
   margin: 16px 0;
@@ -126,7 +112,8 @@ const handleSubmit = () => {
   .root-component {
     padding: 0;
   }
-  .description-title, .component-title {
+  .description-title,
+  .component-title {
     text-align: left;
   }
   .sticker {
